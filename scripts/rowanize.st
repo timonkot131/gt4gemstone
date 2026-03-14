@@ -6,7 +6,7 @@ projectDef := Rowan newProjectNamed: 'gt4gemstone'.
 projectDef
 	specName: 'gt4gemstone';
 	projectsHome: projectsHome;										"location where project will be created, cloned or attached (if the directory projectsHome/<project-name> exists)"
-	gitUrl: 'git@github.com:feenkcom/gt4gemstone.git';	"url used to conditionally clone the git repository when load spec is resolved"
+	gitUrl: 'https://github.com/feenkcom/gt4gemstone.git';	"url used to conditionally clone the git repository when load spec is resolved"
 	revision: 'main';														"commitish to be used if/when project is cloned"
 	addTopLevelComponentNamed: 'Core';							"primary component name"
 	addPlatformComponentNamed: 'Core'
@@ -32,7 +32,7 @@ resolvedProject
 rsrLoadSpec := RwLoadSpecificationV2 new
 	specName: 'RemoteServiceReplication';
 	projectName: 'RemoteServiceReplication';
-	gitUrl: 'git@github.com:GemTalk/RemoteServiceReplication.git';
+	gitUrl: 'https://github.com/GemTalk/RemoteServiceReplication.git';
 	revision: 'development';
 	componentNames: { 'RemoteServiceReplication' };
 	customConditionalAttributes: { 'tests' };
