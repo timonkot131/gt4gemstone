@@ -52,7 +52,7 @@ esac
 export GT_OSNAME
 
 if [ "$GT_OSNAME" = "Linux" ]; then
-  GT_GEMSTONE_VERSION="3.7.5-Beta1"
+  GT_GEMSTONE_VERSION="3.7.4.3"
 elif [ "$GT_OSNAME" = "Darwin" -a "$VM_ARCH" = "arm64" ]; then
   GT_GEMSTONE_VERSION="3.7.5-Beta1"
 elif [ "$GT_OSNAME" = "Darwin" ]; then
