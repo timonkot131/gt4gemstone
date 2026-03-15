@@ -10,6 +10,9 @@
 # - GT_GEMSTONE_VERSION specifies the GemStone version
 #
 
+eval "$(ssh-agent)"
+ssh-add /home/timonkot14/.ssh/githubkey
+
 if [ -z "$GT_GEMSTONE_VERSION" ]
 then
   echo "GT_GEMSTONE_VERSION not specified"
@@ -32,7 +35,9 @@ export GT_OSNAME
 export GTIMAGE_DIRECTORY=`pwd`
 export GEMSTONE_WORKSPACE=${GTIMAGE_DIRECTORY}/remote-gemstone
 
-if [ "$GT_OSNAME" = "Linux" ]; then
+if [ "$GT_OSNAME" = "Linux" -a "$VM_ARCH" = "aarch64" ]; then
+    GEMSTONE="${GEMSTONE_WORKSPACE}/GemStone64Bit${GT_GEMSTONE_ARCHIVE_VERSION}-arm64.Linux"
+elif [ "$GT_OSNAME" = "Linux" ]; then
     GEMSTONE="${GEMSTONE_WORKSPACE}/GemStone64Bit${GT_GEMSTONE_ARCHIVE_VERSION}-x86_64.Linux"
 elif [ "$GT_OSNAME" = "Darwin" -a "$VM_ARCH" = "arm64" ]; then
     GEMSTONE="${GEMSTONE_WORKSPACE}/GemStone64Bit${GT_GEMSTONE_ARCHIVE_VERSION}-arm64.Darwin"
