@@ -11,7 +11,7 @@
 #
 
 eval "$(ssh-agent)"
-ssh-add /home/timonkot14/.ssh/githubkey
+ssh-add /.ssh/githubkey
 
 if [ -z "$GT_GEMSTONE_VERSION" ]
 then
